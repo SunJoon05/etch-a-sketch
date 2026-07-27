@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Etch-a-Sketch</title>
   </head>
   <body>
     <div class="main_container_sketch">
-      <div class="container_grid_actions"></div>
-      <div class="container_grid_elements"><div>
+      <div class="container_grid_actions">
+        <button class="clean_btn">Clean</button>
+        <input class="grid_size" type="number" min="1" max="100" value="16" />
+      </div>
+      <div class="container_grid_elements"></div>
     </div>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
