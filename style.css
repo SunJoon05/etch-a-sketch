@@ -11,10 +11,6 @@
     border-radius: .2rem;
 }
 
-.grid_cell--painted {
-    background: lightblue;
-}
-
 .container_grid_elements {
     padding: 0;
     margin: 0;
