@@ -8,12 +8,44 @@
   </head>
   <body>
     <div class="main_container_sketch">
-      <div class="container_grid_actions">
-        <button class="clean_btn">Clean</button>
-        <input class="grid_size" type="number" min="1" max="100" value="16" />
-        <input class="color_picker" type="color" />
-      </div>
       <div class="container_grid_elements"></div>
+      <div class="container_grid_information">
+        <div class="container_title">
+          <h1 class="main_title">Etch a Sketch</h1>
+        </div>
+        <div class="information_container">
+          <ul class="information_unordered_list">
+            <li class="indication">1. Select the size</li>
+            <li class="indication">2. Select the size</li>
+            <li class="indication">3. Click and drag to paint</li>
+          </ul>
+        </div>
+        <div class="container_grid_actions">
+          <div class="container_indications">
+            <span class="text_info">Clear grid</span>
+            <hr class="separator" />
+            <span class="text_info">Check boxes</span>
+            <hr class="separator" />
+            <span class="text_info">Select color</span>
+          </div>
+
+          <button class="clean_btn action">
+            <span class="clean_btn_text">Clean</span>
+          </button>
+
+          <input
+            class="grid_size action"
+            type="number"
+            min="1"
+            max="100"
+            value="16"
+          />
+
+          <span class="color_picker_container action">
+            <input class="color_picker" type="color" />
+          </span>
+        </div>
+      </div>
     </div>
     <script type="module" src="script.js"></script>
   </body>
