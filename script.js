@@ -71,7 +71,6 @@ function createGridCell(inline_size, block_size) {
     cell.classList.add('grid_cell');
     setInlineSizeCell(cell, inline_size);
     setBlockSizeCell(cell, block_size);
-    setAttachPaintEvents(cell);
     return cell;
 }
 
@@ -93,23 +92,26 @@ function appendGridCell(board, cell) {
 /*
  Lógica para aplicar color a las celdas mediante una variable booleana isPainting
 */
-function setAttachPaintEvents(cell) {
 
-    cell.addEventListener('mousedown', () => {
-        isPainting = true;
-        cell.style.backgroundColor = color_selected;
-    });
+function setAttachPaintEvents(board) {
+    board.addEventListener('mousedown', (event) => {
+        if (event.target.classList.contains('grid_cell')) {
+            isPainting = true;
+            event.target.style.backgroundColor = color_selected
+        }
+    })
 
-    cell.addEventListener('mouseenter', () => {
-        if (isPainting) {
-            cell.style.backgroundColor = color_selected;
+    board.addEventListener('mouseover', (event) => {
+        if (isPainting && event.target.classList.contains('grid_cell')) {
+            event.target.style.backgroundColor = color_selected;
         }
     });
 
-    cell.addEventListener('mouseup', () => {
+    board.addEventListener('mouseup', (event) => {
         isPainting = false;
     });
 }
+
 
 // Cambiar el color de todas las celdas a transparente
 function cleanGridBoard() {
@@ -138,6 +140,8 @@ function buildGridBoard(board, board_size, board_squares) {
             appendGridCell(board, cell);
         }
     }
+
 }
 
+setAttachPaintEvents(container_grid);
 buildGridBoard(container_grid, board_size, board_squares);
