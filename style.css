@@ -15,7 +15,6 @@ body {
     border: 1px dashed rgba(167, 163, 163, 0.275);
     flex-grow: 1;
     box-sizing: border-box;
-    border-radius: .2rem;
 }
 
 .main_container_sketch {
